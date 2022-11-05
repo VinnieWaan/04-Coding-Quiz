@@ -6,7 +6,8 @@
 6. add HUD div to and styled game.html
 7. update HUD in index.js 
 8. created a progress bar
-9. create localStorage to store scores and record the high scores
+9. save score to localStorage 
+10. save the high score into localStorage
 
 
 
