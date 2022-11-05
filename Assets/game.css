@@ -10,10 +10,7 @@
 
 .choice-container:hover { /* EDIT LATER */
     cursor: pointer;
-    color: white;
-    background-color: rgb(236, 109, 236);
-    box-shadow: 0 0.4rem 1.4rem 0 rgb(236, 109, 236);
-    border: 0.1rem solid #1c182e;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
 }
@@ -27,4 +24,29 @@
 
 .choice-text {
     padding: 1.5rem;
+    width: 100%;
+}
+
+.correct {
+    background-color: green; 
+}
+
+.incorrect {
+    background-color: red;
+}
+
+/* HUD */
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hud-main-text {
+    text-align: center;
 }
