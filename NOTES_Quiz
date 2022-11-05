@@ -6,8 +6,9 @@
 6. add HUD div to and styled game.html
 7. update HUD in index.js 
 8. created a progress bar
-9. save score to localStorage 
+9. created end.js and end.html to save score to localStorage 
 10. save the high score into localStorage
+11. create highscores.html and highscores.js
 
 
 
@@ -19,4 +20,10 @@
 - fix styling
 - fix background
 - create timer
+
+figure this error out:
+index.js:75 Uncaught TypeError: Cannot set properties of null (setting 'innerText')
+    at getNewQuestion (index.js:75:28)
+    at startGame (index.js:58:5)
+    at index.js:138:1
 

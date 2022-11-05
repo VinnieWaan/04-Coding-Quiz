@@ -64,11 +64,11 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
         //go to the end page
-        return window.location.assign('/end.html');
+        return window.location.assign('./end.html');
     }
     questionCounter++;
     // can write it in string concatenation 
-    // questionCounterText.innerHTML = questionCounter + "/" + MAX_QUESTIONS;
+    //questionCounterText.innerHTML = questionCounter + "/" + MAX_QUESTIONS;
     
     // OR use string/variable interpolation aka variable substitution.
     // Interpolation is technique that enables you to insert expression values into literal strings. 
