@@ -5,6 +5,8 @@
 5. build index.js
 6. add HUD div to and styled game.html
 7. update HUD in index.js 
+8. created a progress bar
+9. create localStorage to store scores and record the high scores
 
 
 
@@ -14,4 +16,6 @@
 - fix questions
 - fix number of MAX_QUESTIONS
 - fix styling
+- fix background
+- create timer
 

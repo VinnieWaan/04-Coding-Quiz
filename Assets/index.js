@@ -2,8 +2,10 @@ const question = document.getElementById("question");
 //console log an HTMLCollection. Convert to an array.
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 // referencing id from hud div
-const questionCounterText = document.getElementById("questionCounter");
+const progressText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
+const progressBarFull = document.getElementById("progressBarFull");
+
 
 //created some variables 
 let currentQuestion = {}; // WILL REVISIT
@@ -69,8 +71,11 @@ getNewQuestion = () => {
     
     // OR use string/variable interpolation aka variable substitution.
     // Interpolation is technique that enables you to insert expression values into literal strings. 
-    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
-    
+    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    // update the progressBarFull as the questions are rendered
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+
+
     //generates questions in random order
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     //pulling current question from availableQuestions[questionIndex]
