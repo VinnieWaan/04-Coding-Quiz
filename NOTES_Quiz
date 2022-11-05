@@ -3,9 +3,15 @@
 3. build game.html
 4. build game.css 
 5. build index.js
-6. add HUD div to game.html
+6. add HUD div to and styled game.html
+7. update HUD in index.js 
 
 
 
 
 ** REVIEW AND EDIT AT THE END ** 
+
+- fix questions
+- fix number of MAX_QUESTIONS
+- fix styling
+

@@ -1,6 +1,9 @@
 const question = document.getElementById("question");
 //console log an HTMLCollection. Convert to an array.
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+// referencing id from hud div
+const questionCounterText = document.getElementById("questionCounter");
+const scoreText = document.getElementById("score");
 
 //created some variables 
 let currentQuestion = {}; // WILL REVISIT
@@ -61,6 +64,13 @@ getNewQuestion = () => {
         return window.location.assign('/end.html');
     }
     questionCounter++;
+    // can write it in string concatenation 
+    // questionCounterText.innerHTML = questionCounter + "/" + MAX_QUESTIONS;
+    
+    // OR use string/variable interpolation aka variable substitution.
+    // Interpolation is technique that enables you to insert expression values into literal strings. 
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
+    
     //generates questions in random order
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     //pulling current question from availableQuestions[questionIndex]
@@ -97,6 +107,10 @@ choices.forEach(choice => {
       const classToApply =
         selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
+        if (classToApply === "correct") {
+            incrementScore(CORRECT_BONUS);
+        }
+
         // targeting the container element and adding the classToApply ("correct or incorrect") to the DOM
         // assigning red and green color in css for correct and incorrect answers
       selectedChoice.parentElement.classList.add(classToApply);
@@ -109,5 +123,10 @@ choices.forEach(choice => {
     });
   });
   
+  //adds up the score when questions are answered correctly
+  incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+  }
 
 startGame();
