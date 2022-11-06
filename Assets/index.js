@@ -8,6 +8,7 @@ const progressBarFull = document.getElementById("progressBarFull");
 
 
 //created some variables 
+
 let currentQuestion = {}; 
 let acceptingAnswers = false;
 let score = 0;
@@ -59,8 +60,9 @@ let questions = [
         } 
 ]; 
 
+
 // CONSTANTS
-const CORRECT_BONUS = 10; //each answer is worth 10 points
+//const CORRECT_BONUS = 10; //each answer is worth 10 points
 const MAX_QUESTIONS = 5; //number of questions a user gets before they finish
 
 // created function to start the game
@@ -70,6 +72,7 @@ startGame = () => {
     //using the spread operator to get questions from the "questions" array
     availableQuestions = [...questions]; // take "questions" array and spread out each of its item and put them into a new array 
     
+   
     getNewQuestion();
 };
 
@@ -131,12 +134,16 @@ choices.forEach(choice => {
         }
         */
 
+        //Scoring system
         // Ternary (or conditional) operator is more concise way of writing the above code
       const classToApply =
         selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
         if (classToApply === "correct") {
-            incrementScore(CORRECT_BONUS);
+            incrementScore(secondsLeft + 5);
+        } else {
+            secondsLeft = secondsLeft - 5;
+            incrementScore(- 5);
         }
 
         // targeting the container element and adding the classToApply ("correct or incorrect") to the DOM
@@ -158,3 +165,29 @@ choices.forEach(choice => {
   }
 
 startGame();
+
+
+const timeEl = document.querySelector(".hud-timer-clock");
+
+let secondsLeft = 50;
+
+function setTime() {
+  // Sets interval in variable
+  const timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft;
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      
+      localStorage.setItem("mostRecentScore", score);
+        //go to the end page
+        return window.location.assign('./end.html');
+      
+    }
+
+  }, 1000);
+}
+
+setTime();

@@ -11,19 +11,16 @@
 11. created html, css, js high scores files
 
 
-
-
-
 ** REVIEW AND EDIT AT THE END ** 
 
 
-- fix styling
-- fix background
-- create timer
-- review Math.floor(Math.random) line to see if it needs to be switched back to the original element
 
 
 
 
 
-timer: 
+
+
+
+
+
