@@ -46,6 +46,7 @@
 .hud-timer-title {
     text-align: center;
     font-size: 2rem;
+    color: white;
 }
 
 .hud-main-text,
@@ -53,11 +54,16 @@
     text-align: center;
 }
 
+#question{
+    color: white;
+}
+
 #progressBar {
     width: 20rem;
     height: 4rem;
     border: 0.3rem solid #56a5eb;
     margin-top: 1.5rem;
+    background-color: white;
 }
 
 #progressBarFull {

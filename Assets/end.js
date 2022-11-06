@@ -8,7 +8,7 @@ const mostRecentScore = localStorage.getItem('mostRecentScore');
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 //Taking the top 5 scores
-const MAX_HIGH_SCORES = 5;
+const MAX_HIGH_SCORES = 3;
 
 // renders final score to end.html
 finalScore.innerText = "Congrats! Your score is " + mostRecentScore + ".";
@@ -34,8 +34,8 @@ saveHighScore = e => { //e means event
     // sorts score from highest to lowest
     highScores.sort( (a,b) => b.score - a.score)
     
-    //cuts off the top scores at index 5
-    highScores.splice(5);
+    //Recording top 3 scores. Cuts off the top scores at index 3
+    highScores.splice(3);
 
     // NOTE: JSON.stringify method - parse the key value and create a string
     localStorage.setItem("highScores", JSON.stringify(highScores));
