@@ -42,12 +42,14 @@
     justify-content: space-between;
 }
 
-.hud-prefix {
+.hud-prefix,
+.hud-timer-title {
     text-align: center;
     font-size: 2rem;
 }
 
-.hud-main-text {
+.hud-main-text,
+.hud-timer-clock {
     text-align: center;
 }
 

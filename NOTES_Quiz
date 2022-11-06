@@ -8,7 +8,9 @@
 8. created a progress bar
 9. created end.js and end.html to save score to localStorage 
 10. save the high score into localStorage
-11. created highscores.html and highscores.js
+11. created html, css, js high scores files
+12. created JSON file for question instead of having questions hard-coded in the JS file
+     - be able to use the fetch method and promise
 
 
 
@@ -20,6 +22,7 @@
 - fix styling
 - fix background
 - create timer
+- review Math.floor(Math.random) line to see if it needs to be switched back to the original element
 
 figure this error out:
 index.js:75 Uncaught TypeError: Cannot set properties of null (setting 'innerText')
@@ -27,3 +30,7 @@ index.js:75 Uncaught TypeError: Cannot set properties of null (setting 'innerTex
     at startGame (index.js:58:5)
     at index.js:138:1
 
+How to clear out local storage
+
+
+timer: 

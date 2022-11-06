@@ -8,45 +8,60 @@ const progressBarFull = document.getElementById("progressBarFull");
 
 
 //created some variables 
-let currentQuestion = {}; // WILL REVISIT
+let currentQuestion = {}; 
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-//created questions and correct answers
-let questions = [
-    {
-        question: 'Inside which HTML element do we put the JavaScript??',
-        choice1: '<script>',
-        choice2: '<javascript>',
-        choice3: '<js>',
-        choice4: '<scripting>',
-        answer: 1,
-    },
-    {
-        question:
-            "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        choice1: "<script href='xxx.js'>",
-        choice2: "<script name='xxx.js'>",
-        choice3: "<script src='xxx.js'>",
-        choice4: "<script file='xxx.js'>",
-        answer: 3,
-    },
-    {
-        question: " How do you write 'Hello World' in an alert box?",
-        choice1: "msgBox('Hello World');",
-        choice2: "alertBox('Hello World');",
-        choice3: "msg('Hello World');",
-        choice4: "alert('Hello World');",
-        answer: 4,
-    },
-];
+//created questions and correct answers. 
+let questions = [ 
+        {
+          question: "How many moons does Mars have?",
+          choice1: "2",
+          choice2: "13",
+          choice3: "50",
+          choice4: "1",
+          answer: 1
+        },
+        {
+          question:
+            "What is the Great Red Spot on Jupiter?",
+          choice1: "A volcano",
+          choice2: "A lake",
+          choice3: "A crater",
+          choice4: "A storm",
+          answer: 4
+        },
+        {
+          question: "Which planet is closet to the sun?",
+          choice1: "Neptune",
+          choice2: "Mercury",
+          choice3: "Venus",
+          choice4: "Earth",
+          answer: 2
+        },
+        {
+          question: "Which planet do the moons Oberon and Titania belong to?",
+          choice1: "Saturn",
+          choice2: "Jupiter",
+          choice3: "Uranus",
+          choice4: "Pluto",
+          answer: 3
+        },
+        {
+          question: "The largest volcano in the solar system is called Olympus Mons. Which planet is it on?",
+          choice1: "Earth",
+          choice2: "Venus",
+          choice3: "Saturn",
+          choice4: "Mars",
+          answer: 4
+        } 
+]; 
 
 // CONSTANTS
 const CORRECT_BONUS = 10; //each answer is worth 10 points
-// **EDIT NUMBER OF QUESTIONS **
-const MAX_QUESTIONS = 3; //number of questions a user gets before they finish
+const MAX_QUESTIONS = 5; //number of questions a user gets before they finish
 
 // created function to start the game
 startGame = () => {
@@ -72,17 +87,24 @@ getNewQuestion = () => {
     
     // OR use string/variable interpolation aka variable substitution.
     // Interpolation is technique that enables you to insert expression values into literal strings. 
-    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+
+    if (progressText) {
+        progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    }
+    
     // update the progressBarFull as the questions are rendered
-    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
-
-
+    if (progressBarFull) {
+        progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+    }
+    
     //generates questions in random order
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     //pulling current question from availableQuestions[questionIndex]
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
-
+    if (question) {
+        question.innerText = currentQuestion.question;
+    }
+    
     choices.forEach((choice) => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];

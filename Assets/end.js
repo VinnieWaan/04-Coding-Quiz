@@ -11,7 +11,7 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const MAX_HIGH_SCORES = 5;
 
 // renders final score to end.html
-finalScore.innerText = mostRecentScore;
+finalScore.innerText = "Congrats! Your score is " + mostRecentScore + ".";
 
 //the Save button is disabled if no value is entered in the username box
 username.addEventListener("keyup", () => {
@@ -25,8 +25,8 @@ saveHighScore = e => { //e means event
 
     //create an object for highScores
     const score = {
-        //score: mostRecentScore,
-        score: Math.floor(Math.random() * 100),
+        score: mostRecentScore,
+        //score: Math.floor(Math.random() * 100), //**switch back to mostRecentScore**
         name: username.value
     };
     highScores.push(score);
