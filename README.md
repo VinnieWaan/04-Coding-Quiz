@@ -12,16 +12,16 @@ Assignment: 04-Quiz Challenge
 
 Task:
 
-- 1. Click button to start the quiz game.
-- 2. Create questions and timer. 
-- 3. As questions are answered, it scrolls to the next question.
-- 4. Subtract time when there's an incorrect answer.
-- 5. Quiz ends when all questions are answered or timer reaches 0.
-- 6. Be able to enter name
-- 7. Be able to save score to local storage.
-- 8. Be able to sort and render highscores from local storage.
-- Create acceptable ReadMe file.
-- Concise, descriptive title.
+1. Click button to start the quiz game.
+2. Create questions and timer. 
+3. As questions are answered, it scrolls to the next question.
+4. Subtract time when there's an incorrect answer.
+5. Quiz ends when all questions are answered or timer reaches 0.
+6. Be able to enter name
+7. Be able to save score to local storage.
+8. Be able to sort and render highscores from local storage.
+9. Create acceptable ReadMe file.
+10. Concise, descriptive title.
 
 Lessons Learned:
 - Completed all of the above tasks
