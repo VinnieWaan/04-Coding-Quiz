@@ -6,9 +6,7 @@ const progressText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
 
-
 //created some variables 
-
 let currentQuestion = {}; 
 let acceptingAnswers = false;
 let score = 0;
